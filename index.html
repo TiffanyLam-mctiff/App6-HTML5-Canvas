@@ -69,7 +69,6 @@ var a_canvas = document.getElementById("a");// a canvas will appear with a borde
 </div>
 	
 <div id="content" class="w3-container">
-	<p>Content goes here.</p>
 		
 	<p>The following code has been developed by students and/or researchers of the Freshman Research Initiative DIY Diagnostics Stream at The University of Texas at 		Austin.  This code is shared for demonstration purposes and should not be considered a product -- it is for entertainment purposes only. Any user of this code 			does so at their own risk. Members of the DIY Stream, FRI, and The University of Texas system are not liable for anything related to this code.</p>
  	
@@ -78,6 +77,100 @@ var a_canvas = document.getElementById("a");// a canvas will appear with a borde
 	<a href="#one" class="w3-btn w3-grey w3-round"> Get Started </a>
 	<!-- button to move to the next page displaying the canvas and buttons-->
 
+	<a href="#one" class="w3-btn w3-grey w3-round"> Get Started </a> 
+	<!-- button to move onto the next page that shows the canvas and buttons-->
+
+<div class="page" id="one">
+	<div id="header" class="w3-container w3-flat-carrot">
+		<h1>Click the Buttons For a Surprise! </h1>
+		<!-- added in the title: Click The Buttons for a Surprise!-->
+	</div>
+
+    	<canvas id="a" width="350" height="250" style="border:1px solid #000000;"></canvas>
+		<!-- created a canvas code that will appear with a border around it-->
+
+ 	<button onclick="drawSquare()">Shape</button>
+		<!-- button to draw the square-->
+	    <script>
+		var canvas = document.getElementById("a");
+		    <!-- get the canvas element-->
+
+		var ctx = canvas.getContext("2d");
+		    <!-- get the 2D context of the canvas-->
+
+		function drawSquare() {
+		    <!-- set the square parameters -->
+		    var squareSize = 150;
+		    var squarePos = {x: 120, y: 180};
+		    var squareColor = "red";
+
+		    ctx.fillStyle = squareColor;
+		    ctx.fillRect(squarePos.x, squarePos.y, squareSize, squareSize);
+			<!-- the two script above was apart of a code provided by ChatGPT after I asked the following question "what is the code to draw a square?" -->
+		}
+	    </script> 
+	
+	 <button onclick="showText()">Name</button>
+		<!-- button to showcase name -->
+	    <script>
+		var canvas = document.getElementById("a");
+		   <!-- get the canvas element-->
+
+		var ctx = canvas.getContext("2d");
+		    <!-- get the 2D context of the canvas-->
+		    
+		 function showText() {
+			 <!-- set the text -->
+		    ctx.fillStyle = "black";
+		    ctx.font = "30px Arial";
+		    ctx.fillText("Tiffany Lam", 150, 50);
+			 <!-- creates the appearance of the text -->
+		 }
+	    </script>
+	
+	<button onclick="showImage()">Image</button>
+		<!-- button to showcase image -->
+	    <script>
+		var canvas = document.getElementById("a");
+		     <!-- get the canvas element-->
+		    
+		var ctx = canvas.getContext("2d");
+		     <!-- get the 2D context of the canvas-->
+		    
+		var img = new Image();
+		    <!-- command for image-->
+		    
+		function showImage() {
+			 <!-- get the image on canvas -->
+			img.onload = function() {
+			ctx.drawImage(img, 0, 0);
+			};
+			 img.src = "https://www.google.com/imgres?imgurl=https%3A%2F%2Fe0.pxfuel.com%2Fwallpapers%2F67%2F570%2Fdesktop-wallpaper-red-the-angry-bird-twitter-angry-birds-funny-thumbnail.jpg&tbnid=L9Wl6qfLWCR00M&vet=12ahUKEwjNm7j1x__9AhUVPd4AHXMCC3UQMygBegUIARCuAQ..i&imgrefurl=https%3A%2F%2Fwww.pxfuel.com%2Fen%2Fquery%3Fq%3Dangry%2Bbirds%2Bfunny&docid=bCuwRo_eRUAX8M&w=350&h=525&q=angry%20birds%20funny%20pictures&ved=2ahUKEwjNm7j1x__9AhUVPd4AHXMCC3UQMygBegUIARCuAQ";
+				<!-- Google -->
+			}
+		</script>
+
+	 <button onclick="clearCanvas()">Clear</button>
+		<!-- button to clear canvas -->
+		<script>
+		    var canvas = document.getElementById("a");
+			 <!-- get the canvas element-->
+		    var ctx = canvas.getContext("2d");
+			 <!-- get the 2D context of the canvas-->
+
+		    function clearCanvas() {
+		        ctx.clearRect(0, 0, canvas.width, canvas.height);
+			    <!-- the script above were apart of a code provided  by ChatGPT after I asked the following question "what is the code to clear canvas?"-->
+		}
+		</script>
+	
+    	</div>
+</div>
+
+</body>
+</html>
+
+	
 <footer class="w3-bottom w3-container w3-flat-carrot">
 	<p>DIY!</p>
 </footer>
